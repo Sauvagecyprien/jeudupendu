@@ -36,7 +36,9 @@ $( document ).ready(function() {
             }
 
             $('.contenu').html(contenu)
-            document.querySelector('#mot').textContent = lettreMot;	
+            $('#rejouer').hide()
+            $('#leslettres').hide()
+        	document.querySelector('#longueur').textContent = totalLettre;
         
         }
 
@@ -44,17 +46,25 @@ $( document ).ready(function() {
 
         });
         function remplacement (lettre){
+            $('#boutton'+ lettre).addClass('disabled');
+            $('#boutton'+ lettre).attr('onclick', '');
+            $('#boutton'+ lettre).attr('tabindex', '-1');
             var tt = document.querySelectorAll('#'+ lettre);
             tcheck (tt); 
-        
+         win();
             tt.forEach(element => {
+                chiffre =  document.querySelector('#lettre').textContent ;
+                chiffre ++;
+                document.querySelector('#lettre').textContent = chiffre;
                 element.textContent = lettre;
             });
+            win();
         }
 
         function tcheck (tt){
             error =  document.querySelector('#error').textContent ;
             changeimage(error);
+
             if (tt.length === 0){
                 error =  document.querySelector('#error').textContent ;	
               error ++;
@@ -67,6 +77,16 @@ $( document ).ready(function() {
             
         }
 
+        function win(){
+            totalLettre = document.querySelector('#longueur').textContent;
+            chiffre =  document.querySelector('#lettre').textContent ;
+
+            if (chiffre === totalLettre){
+                document.querySelector('#mot').textContent = "Vous avez perdu gagné wouuuuuuhouuuu !"; 
+                $('#imagedupendu').attr('src', 'asset/images/win.gif');
+                $('#rejouer').show()           
+            }
+        }
         function changeimage(error){
             switch (error) {
                 case "0":
@@ -109,10 +129,12 @@ $( document ).ready(function() {
                     $('#imagedupendu').attr('src', 'asset/images/pendu9.png');
                    
                     break;
+                   
                     case "10":
                     $('#imagedupendu').attr('src', 'asset/images/pendu10.png');
                     document.querySelector('#mot').textContent = "Vous avez perdu dommage !";
-                    setTimeout(function(){document.location.href="index.php";} , 2000);
+                    setTimeout(function(){$('#imagedupendu').attr('src', 'asset/images/gif.gif');} , 1000);
+                    setTimeout(function(){document.location.href="index.php";} , 6000);
 
                     break;
                 default:

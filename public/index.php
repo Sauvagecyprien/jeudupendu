@@ -1,7 +1,7 @@
-<h1 id="mot"></h1>
+<h1 id="mot" class="text-center"></h1>
 
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="display: flex; justify-content:center">
-  <div class="btn-group mr-2" role="group" aria-label="First group">
+    
+  
     <button type="button" class="btn btn-secondary"id="bouttonA" onclick="remplacement('A')" value="A">A</button>
     <button type="button" class="btn btn-secondary"  id="bouttonB" onclick="remplacement('B')" value="B">B</button>
     <button type="button" class="btn btn-secondary"id="bouttonC" onclick="remplacement('C')" value="C">C</button>
@@ -29,9 +29,6 @@
     <button type="button" class="btn btn-secondary"id="bouttonY"onclick="remplacement('Y')" value="Y">Y</button>
     <button type="button" class="btn btn-secondary"id="bouttonZ"onclick="remplacement('Z')" value="Z">Z</button>
 
- </div>
-  </div>
-   
     <h1 class="text-center motAleatoire"></h1>
         <div class="text-center">
             <h1>
@@ -40,7 +37,9 @@
             <input type="hidden" id="etape" value="1"/>
             <div style="margin-top: 80px"> 
             <img id="imagedupendu" src="asset/images/pendu0.png" alt="">
+            
             </div>
+          <a href="index.php" id="rejouer" class="btn btn-secondary btn-lg btn-block" style="margin-top:30px">Rejouer</a>
         </div>
         <br/>
         <br/>

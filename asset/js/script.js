@@ -82,7 +82,7 @@ $( document ).ready(function() {
             chiffre =  document.querySelector('#lettre').textContent ;
 
             if (chiffre === totalLettre){
-                document.querySelector('#mot').textContent = "Vous avez perdu gagné wouuuuuuhouuuu !"; 
+                document.querySelector('#mot').textContent = "Vous avez gagné wouuuuuuhouuuu !"; 
                 $('#imagedupendu').attr('src', 'asset/images/win.gif');
                 $('#rejouer').show()           
             }
@@ -133,8 +133,8 @@ $( document ).ready(function() {
                     case "10":
                     $('#imagedupendu').attr('src', 'asset/images/pendu10.png');
                     document.querySelector('#mot').textContent = "Vous avez perdu dommage !";
-                    setTimeout(function(){$('#imagedupendu').attr('src', 'asset/images/gif.gif');} , 1000);
-                    setTimeout(function(){document.location.href="index.php";} , 6000);
+                    setTimeout(function(){$('#imagedupendu').attr('src', 'asset/images/drole.gif');} , 1000);
+                    setTimeout(function(){document.location.href="index.php";} , 8000);
 
                     break;
                 default:

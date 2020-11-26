@@ -1,0 +1,11 @@
+{
+    "require": {
+      "guzzlehttp/psr7": "^1.7"
+    },
+    "autoload": {
+      "psr-4": {
+        "Src\\": "src/"
+      }
+    }
+  }
+  
